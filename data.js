@@ -1,9 +1,9 @@
 const config = {
-    "test1@google.com": {
+    "testkate@google.com": {
         authors: {
-            1: "author 1",
-            2: "author 2",
-            3: "author 3",
+            1: "Garfield",
+            2: "John",
+            3: "Mary",
         },
     },
     "test2@google.com" : {
