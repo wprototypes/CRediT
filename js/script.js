@@ -30,6 +30,7 @@ function assignRoleFun() {
   var url_string = window.location.href
   var url = new URL(url_string);
   var email = url.searchParams.get("userId");
+  email = email.replace('%40', '@');
   if (config && Object.keys(config).length !== 0) {
     for (const [key, value] of Object.entries(config)) {
       if (key === email) {
