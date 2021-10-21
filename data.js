@@ -20,4 +20,11 @@ const config = {
             3: "author 9",    
         }, 
     },
+    "test4@google.com" : {
+        authors: {
+            1: "author 10",
+            2: "author 11",
+            3: "author 12",    
+        }, 
+    },
 }

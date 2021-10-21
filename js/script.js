@@ -75,11 +75,11 @@ function assignRoleFun() {
     }
     addHtml += `</td></tr>`
     
-    let footeraddHtml = `<tr class="tableUserListTr"><th  width="10%"> Total </th><td class="rolesList-total row tableUserListTd">`
+    let footeraddHtml = `<tr class="tableUserListTr"><th width="10%"> Total </th><td class="rolesList-total row tableUserListTd">`
     if (roles && Object.keys(roles).length !== 0) {
       for (let role in roles) {
         footeraddHtml += `<div class="form-check-inline col-md-3 mr-0">
-        <label class="form-check-label" id="role-lable-${role}" disabled>
+        <label class="total-role-lable" id="role-lable-${role}" disabled>
         <span> <label class="totleRoleCount" id="role-count-${role}" disabled>0</label disabled> ${roles[role]}</span>
         </label></div>`
       }
@@ -128,6 +128,7 @@ function saveRoles() {
       hasError++
       $(this).parent().find('th').css({ 'border-style': "solid", 'border-color': "red" });
       $(this).parent().css({ 'border-style': "solid", 'border-color': "red" });
+      $(this).parent().addClass('wariningRow')
       $('#saveRolesBtn').removeClass('btn-primary')
       $('#saveRolesBtn').addClass('btn-danger')
       $('#saveRolesBtn')[0].style.removeProperty('background-color');
@@ -189,6 +190,7 @@ function saveRoles() {
       $('#assignRolesBtnDiv').html(editBtnHtml)
     }
   } else {
+    $('.wariningRow')[0].scrollIntoView();
     $('.progress').css('border','2px solid red');
     $('#assignedUserWarningTag').text(`${hasError} Authors are not assigned to any role.`)
     $('#assignedUserWarningTag').addClass('hasError')
@@ -224,11 +226,11 @@ function editRoleFun () {
     addHtml += `</td></tr>`
     
     //  Footer stickey row of total  ----------
-    let footeraddHtml = `<tr class="tableUserListTr"><th  width="10%"> Total </th><td class="rolesList-total row tableUserListTd">`
+    let footeraddHtml = `<tr class="tableUserListTr"><th width="10%"> Total </th><td class="rolesList-total row tableUserListTd">`
     if (roles && Object.keys(roles).length !== 0) {
       for (let role in roles) {
         footeraddHtml += `<div class="form-check-inline col-md-3 mr-0">
-        <label class="form-check-label" id="role-lable-${role}" disabled>
+        <label class="total-role-lable" id="role-lable-${role}" disabled>
         <span> <label class="totleRoleCount" id="role-count-${role}">0</label> ${roles[role]}</span>
         </label></div>`
       }
@@ -262,6 +264,7 @@ $(document).on("click", ".form-check-label", function () {
     }
     if (count !== 0) {
       $(this).parent().find('th').removeAttr("style");
+      $(this).parent().removeClass('wariningRow')
       $(this).parent().removeAttr("style");
     }
   });

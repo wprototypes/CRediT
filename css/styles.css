@@ -174,8 +174,8 @@ p.page-details {
 }
 
 /* custom css for functionality */
-.form-check-label:disabled,
-.form-check-label[disabled] {
+.total-role-lable:disabled,
+.total-role-lable[disabled] {
   color: #878d93;
 }
 
@@ -298,7 +298,7 @@ label.form-check-label:hover {
 }
 
 #scroll-table thead {
-  display: table; /* to take the same width as tr */
+  /*display: table;*/ /* to take the same width as tr */
   width: calc(100% - 17px);
 }
 
