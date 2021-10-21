@@ -24,7 +24,8 @@ const config = {
         authors: {
             1: "author 10",
             2: "author 11",
-            3: "author 12",    
+            3: "This is a very long author name",
+            4: "Andanotherlongauthorname"
         }, 
     },
 }
