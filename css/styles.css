@@ -185,9 +185,6 @@ p.page-details {
   text-align: center;
 }
 
-.rowSelected {
-  background-color: #e6eeff !important;
-}
 
 .progress {
   margin-top: 4px;
@@ -248,7 +245,6 @@ table thead th {
   padding: .75rem;
   vertical-align: middle;
   text-align: center;
-  border-top: 1px solid #dee2e6;
 }
 
 #assignedUserWarningTag {
@@ -275,7 +271,7 @@ a u {
 
 label.form-check-label:hover {
   color: #005274;
-  text-decoration: underline;
+  cursor: pointer;
 }
 
 .warninngRed {
@@ -283,30 +279,24 @@ label.form-check-label:hover {
 }
 
 #authorListTable {
+  display:block;
   overflow-y:auto;
-  max-height:300px;
+  max-height:305px;
   min-height: 10px;
 }
 
 #scroll-table {
   width: 100%;
+
 }
 
-#scroll-table, td {
-  border-collapse: collapse;
-  border: 1px solid #dee2e6;
-}
 
 #scroll-table thead {
   /*display: table;*/ /* to take the same width as tr */
   width: calc(100% - 17px);
 }
 
-#scroll-table tbody {
-  display: block; /* to enable vertical scrolling */
-  max-height: 240px; /* e.g. */
-  overflow-y: auto; /* keeps the scrollbar even if it doesn't need it; display purpose */
-}
+
 
 #scroll-table tr {
   display: table; /* display purpose; th's border */
@@ -316,10 +306,66 @@ label.form-check-label:hover {
 
 #scroll-table td {
   text-align: left;
-  border-bottom: none;
-  border-left: none;
 }
 
 .dropdown span {
   color: #004466;
+}
+
+.form-check-inline{
+  vertical-align:top;
+  display:block;
+  padding-bottom:5px;
+  line-height:1.25em;
+
+}
+.form-check-inline span{
+ display:inline-block;
+ width:190px;
+ vertical-align:top;
+}
+
+
+.table-striped tbody tr.rowSelected{
+  background-color:#f0faff;
+}
+.table-striped tbody tr.rowSelected:nth-of-type(odd){
+  background-color:#d5f2ff;
+
+}
+
+.total-role-lable{
+  margin-bottom:0;
+}
+.rolesList-total .form-check-inline{
+  line-height:1em;
+  padding-bottom:2px;
+}
+
+.table-striped tbody tr.rowSelected td, .table-striped tbody tr.rowSelected th{
+  border-color: #cceeff;
+}
+.table-striped tbody tr.rowSelected:nth-of-type(odd) td, .table-striped tbody tr.rowSelected:nth-of-type(odd) th{
+  border-color: #bfeaff;
+}
+
+#authorListTableFooter{
+  border-top: 2px solid #999;
+}
+#authorListTableFooter td, #authorListTableFooter th{
+  border-top: none;
+}
+#scroll-table thead{
+  border-bottom: 1px solid #999;
+}
+#scroll-table thead th{
+  border-bottom:none;
+}
+.assignedCountP{
+  text-align:center;
+  font-size:13px;
+  padding-top:1px;
+}
+#scroll-table{
+  margin-bottom:0;
 }

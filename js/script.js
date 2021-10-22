@@ -43,6 +43,7 @@ function assignRoleFun() {
   $('#saveRolesBtn').addClass('btn-primary')
   $('#saveRolesBtn')[0].style.removeProperty('background-color');
   $('#saveRolesBtn')[0].style.setProperty("background-color", "#005274");
+  $(".fa-check").hide().css("color","green");
 
   // Progress bar inital changes
   $('#progressDiv').removeAttr('style')
@@ -62,7 +63,7 @@ function assignRoleFun() {
   let addHtml = ''
   if (rowAuthorsList && Object.keys(rowAuthorsList).length !== 0) {
     for (let key in rowAuthorsList) {
-      addHtml += ` <tr class="tableUserListTr"><th width="10%">${rowAuthorsList[key]}<br><small></small></th><td class="${rowAuthorsList[key]}-rolesList roles-td row tableUserListTd" data-user-id="${key}">`
+      addHtml += ` <tr class="tableUserListTr"><th width="15%">${rowAuthorsList[key]}<br><small></small></th><td class="${rowAuthorsList[key]}-rolesList roles-td row tableUserListTd" data-user-id="${key}">`
         if (roles && Object.keys(roles).length !== 0) {
           for (let role in roles) {
            addHtml += `<div class="form-check-inline col-md-3 mr-0">
@@ -76,7 +77,7 @@ function assignRoleFun() {
     }
     addHtml += `</td></tr>`
     
-    let footeraddHtml = `<tr class="tableUserListTr"><th width="10%"> Total </th><td class="rolesList-total row tableUserListTd">`
+    let footeraddHtml = `<tr class="tableUserListTr"><th width="15%"> Total </th><td class="rolesList-total row tableUserListTd">`
     if (roles && Object.keys(roles).length !== 0) {
       for (let role in roles) {
         footeraddHtml += `<div class="form-check-inline col-md-3 mr-0">
@@ -205,6 +206,7 @@ function editRoleFun () {
   document.getElementsByClassName('progress-bar').item(0).setAttribute('style', 'width:' + Number(0) + '%');
   $('#assignedCount').text(`0/${Object.keys(rowAuthorsList).length}`)
   $('#assignedUserWarningTag').text('')
+  $(".fa-check").hide();
 
   selectedRoles = ''
   assignedRoles = false
@@ -212,7 +214,7 @@ function editRoleFun () {
   let addHtml = ''
   if (rowAuthorsList && Object.keys(rowAuthorsList).length !== 0) {
     for (let key in rowAuthorsList) {
-      addHtml += ` <tr class="tableUserListTr"><th width="10%">${rowAuthorsList[key]}<br><small></small></th><td class="${rowAuthorsList[key]}-rolesList roles-td row tableUserListTd" data-user-id="${key}">`
+      addHtml += ` <tr class="tableUserListTr"><th width="15%">${rowAuthorsList[key]}<br><small></small></th><td class="${rowAuthorsList[key]}-rolesList roles-td row tableUserListTd" data-user-id="${key}">`
         if (roles && Object.keys(roles).length !== 0) {
           for (let role in roles) {
            addHtml += `<div class="form-check-inline col-md-3 mr-0">
@@ -227,7 +229,7 @@ function editRoleFun () {
     addHtml += `</td></tr>`
     
     //  Footer stickey row of total  ----------
-    let footeraddHtml = `<tr class="tableUserListTr"><th width="10%"> Total </th><td class="rolesList-total row tableUserListTd">`
+    let footeraddHtml = `<tr class="tableUserListTr"><th width="15%"> Total </th><td class="rolesList-total row tableUserListTd">`
     if (roles && Object.keys(roles).length !== 0) {
       for (let role in roles) {
         footeraddHtml += `<div class="form-check-inline col-md-3 mr-0">
@@ -297,6 +299,32 @@ $(document).on("click", ".form-check-label", function () {
   } else {
     $(this).parent().parent().parent().find('small').text('')
   }
+
+
+  iscomplete = true;
+
+  $('.roles-td').each(function () {
+    var count = 0;
+    $(this).find('.form-check-input').each(function () {
+      if (jQuery(this).is(':checked')) {
+        count++;
+      }
+    });
+    if (count == 0) {
+      iscomplete = false;
+    }
+  });
+  if(iscomplete){
+    $(".fa-check").show();
+    $("#progressDiv").css("border","none");
+    $("#saveRolesBtn").removeClass("warninngRed")
+  }
+  else{
+    $(".fa-check").hide();
+  }
+  
+
+
 });
 
 // Updated total count at bottom of table
