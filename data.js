@@ -1,23 +1,33 @@
 const config = {
-    "test1@google.com": {
+    "robert.orpet@wsu.edu": {
         authors: {
-            1: "author 1",
-            2: "author 2",
-            3: "author 3",
+            1: "Robert J. Orpet",
+            2: "W. Rodney Cooper",
+            3: "Elizabeth H. Beers",
+            4: "Louis B. Nottingham",
         },
     },
-    "test2@google.com" : {
+    "c.pennington@aston.ac.uk" : {
         authors: {
-            1: "author 4",
-            2: "author 5",
-            3: "author 6",
+            1: "Charlotte R. Pennington",
+            2: "Andrew Jones",
+            3: "James E. Bartlett",
+            4: "Amber Copeland",
+            5: "Daniel J. Shaw",
         },
     },
-    "test3@google.com" : {
+    "martin.williams@usda.gov" : {
         authors: {
-            1: "author 7",
-            2: "author 8",
-            3: "author 9",    
+            1: "Christopher A. Landau",
+            2: "Aaron G. Hager",
+            3: "Martin M. Williams II",    
+        }, 
+    },
+    "uchechukwu.chukwudi@unn.edu.ng" : {
+        authors: {
+            1: "Chukwudi U. P.",
+            2: "Mavengahama S.",
+            3: "Kutu F. R.",
         }, 
     },
     "test4@google.com" : {
