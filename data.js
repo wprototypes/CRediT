@@ -29,6 +29,22 @@ const config = {
             2: "Mavengahama S.",
             3: "Kutu F. R.",
         }, 
+         },
+    "christopher.mackin93@gmail.com" : {
+        authors: {
+            1: "Christopher R. Mackin",
+            2: "Julián F. Peña",
+            3: "Mario A. Blanco",
+            4: "Nicholas J. Balfour",
+            5: "Maria Clara Castellanos"
+        }, 
+    },
+    "dnrider@gmail.com" : {
+        authors: {
+            1: "Debra J. November-Rider",
+            2: "Kelly Shutoff",
+            3: "Daniel B. Rider",
+        }, 
     },
     "test4@google.com" : {
         authors: {
